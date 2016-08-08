@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: net-tools
+spec:
+  containers:
+  - name: net-tools
+    image: donch/net-tools:2
+    args:
+    - sleep
+    - "1000"
