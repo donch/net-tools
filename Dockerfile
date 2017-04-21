@@ -13,7 +13,7 @@ RUN apk add --no-cache tcpdump
 RUN apk add --no-cache nmap
 RUN apk add --no-cache iperf
 RUN apk add --no-cache openssh-client
-RUN apk add wrk --update-cache --repository http://dl-8.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+#RUN apk add wrk --update-cache --repository http://dl-8.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 RUN rm -rf /var/cache/apk/*
 
 # Add static dig binary
