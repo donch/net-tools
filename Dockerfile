@@ -12,6 +12,7 @@ RUN apk add --no-cache htop
 RUN apk add --no-cache tcpdump
 RUN apk add --no-cache nmap
 RUN apk add --no-cache iperf
+RUN apk add --no-cache openssh-client
 RUN rm -rf /var/cache/apk/*
 
 # Add static dig binary

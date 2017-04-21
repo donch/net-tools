@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: net-tools
-    image: donch/net-tools:2
+    image: donch/net-tools:latest
     args:
     - sleep
-    - "1000"
+    - "300000000"
