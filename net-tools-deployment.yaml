@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: net-tools
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: net-tools
+    spec:
+      containers:
+      - name: net-tools
+        image: donch/net-tools:latest
+        args:
+        - sleep
+        - "300000000"
