@@ -5,6 +5,7 @@ MAINTAINER David Donchez <david.donchez@gmail.com>
 RUN apt-get update && apt-get -y install traceroute \
     dnsutils \
     mtr-tiny \
+    iputils-ping \
     netcat-openbsd \
     wget \
     curl \
@@ -14,6 +15,7 @@ RUN apt-get update && apt-get -y install traceroute \
     nmap \
     iperf \
     openssh-client \
+    jq \
     && rm -rf /var/lib/apt/lists/*
 
 CMD ["/bin/bash"]
