@@ -2,8 +2,13 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: net-tools
+  labels:
+    app: net-tools
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+       app: net-tools
   template:
     metadata:
       labels:
