@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-       app: net-tools
+      app: net-tools
   template:
     metadata:
       labels:
-        name: net-tools
+        app: net-tools
     spec:
       containers:
       - name: net-tools
