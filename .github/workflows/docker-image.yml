@@ -10,13 +10,15 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v2
-    - name: install buildx
+    - name: Install Buildx
       id: buildx
       uses: crazy-max/ghaction-docker-buildx@v1
       with:
         version: late
-    - name: build the image
+    - name: Login to Docker Hub
+      run: echo "${{ secrets.DH_PASSWORD }}" | docker login -u "${{ secrets.DH_LOGIN }}" --password-stdin
+    - name: Build and push
       run: |
-        docker buildx build \
-          --tag your-username/multiarch-example:latest \
+        docker buildx build --push \
+          --tag donch/net-tools:latest \
           --platform linux/amd64,linux/arm/v7,linux/arm64 .
