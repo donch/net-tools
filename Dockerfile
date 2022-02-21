@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.15.0
 MAINTAINER David Donchez <david.donchez@gmail.com>
 
 
@@ -15,8 +15,10 @@ RUN apk add --no-cache iperf
 RUN apk add --no-cache openssh-client
 RUN apk add --no-cache postgresql-client
 RUN apk add --no-cache mysql-client
+RUN apk add --no-cache bind-tools
 #RUN apk add wrk --update-cache --repository http://dl-8.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 RUN rm -rf /var/cache/apk/*
 
 # Add static dig binary
 ADD dig /usr/local/bin/dig
+CMD ["sleep", "infinity"]
