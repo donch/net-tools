@@ -12,6 +12,7 @@ RUN apk add --no-cache mtr \
  tcpdump \
  nmap \
  iperf \
+ nload \
  openssh-client \
  postgresql-client \
  mysql-client \
