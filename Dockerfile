@@ -1,9 +1,11 @@
-FROM alpine:3.15.4
+FROM alpine:edge
 MAINTAINER David Donchez <david.donchez@gmail.com>
 
 
-# Installing some net tools
-RUN apk add --no-cache mtr \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+
+# Installing some tools
+RUN apk update && apk add --no-cache mtr \
  netcat-openbsd \
  wget \
  bash \ 
@@ -18,6 +20,12 @@ RUN apk add --no-cache mtr \
  mysql-client \
  bind-tools \
  redis \
+ starship \
+ vim \
+ kubectl \
  && rm -rf /var/cache/apk/*
+
+COPY files/.bashrc /root/.bashrc
+COPY files/starship.toml /root/.config/starship.toml
 
 CMD ["sleep", "infinity"]

@@ -1,0 +1,19 @@
+command_timeout = 2000
+
+[git_branch]
+style = "purple"
+
+[gcloud]
+disabled = true
+
+[aws]
+disabled = true
+
+[kubernetes]
+disabled = false
+style = "bold fg:18 bg:117"
+format = '[$symbol$context( \($namespace\))]($style) in '
+
+[cmd_duration]
+min_time = 500
+
