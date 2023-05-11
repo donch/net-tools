@@ -23,6 +23,7 @@ RUN apk update && apk add --no-cache mtr \
  starship \
  vim \
  kubectl \
+ strace \
  && rm -rf /var/cache/apk/*
 
 COPY files/.bashrc /root/.bashrc
