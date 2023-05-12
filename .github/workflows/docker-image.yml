@@ -48,6 +48,7 @@ jobs:
         platforms: linux/amd64,linux/arm64,linux/arm/v7
         push: true
         labels: ${{ steps.meta.outputs.labels }}
+        file: Dockerfile.alpine
         tags: |
           ${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:latest
