@@ -1,0 +1,38 @@
+FROM ubuntu:lunar
+MAINTAINER David Donchez <david.donchez@gmail.com>
+
+RUN apt-get update && apt-get -y install traceroute \
+    dnsutils \
+    ca-certificates \
+    apt-transport-https \
+    mtr-tiny \
+    iputils-ping \
+    netcat-openbsd \
+    wget \
+    curl \
+    bash \
+    htop \
+    tcpdump \
+    nmap \
+    iperf \
+    openssh-client \
+    jq \
+    postgresql-client \
+    mysql-client \
+    bind9-dnsutils \
+    redis \
+    vim \
+    strace
+
+RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
+
+RUN curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg \
+    && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" |  tee /etc/apt/sources.list.d/kubernetes.list
+
+RUN apt-get update && apt-get install -y kubectl \
+    && rm -rf /var/lib/apt/lists/* 
+
+COPY files/.bashrc /root/.bashrc
+COPY files/starship.toml /root/.config/starship.toml
+
+CMD ["sleep", "infinity"]
