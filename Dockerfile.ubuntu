@@ -29,7 +29,7 @@ RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
 RUN curl -fsSLo /etc/apt/keyrings/kubernetes-archive-keyring.gpg https://packages.cloud.google.com/apt/doc/apt-key.gpg \
     && echo "deb [signed-by=/etc/apt/keyrings/kubernetes-archive-keyring.gpg] https://apt.kubernetes.io/ kubernetes-xenial main" |  tee /etc/apt/sources.list.d/kubernetes.list
 
-RUN apt-get update --allow-insecure-repositories && apt-get install -y kubectl \
+RUN apt-get update --allow-insecure-repositories && apt-get install -y --allow-unauthenticated kubectl \
     && rm -rf /var/lib/apt/lists/* 
 
 COPY files/.bashrc /root/.bashrc
