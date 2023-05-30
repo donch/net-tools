@@ -24,7 +24,6 @@ RUN apk update && apk add --no-cache mtr \
  vim \
  kubectl \
  strace \
- ceph-common \
  && rm -rf /var/cache/apk/*
 
 COPY files/.bashrc /root/.bashrc
