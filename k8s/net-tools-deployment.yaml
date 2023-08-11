@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-tools
+  labels:
+    app: net-tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-tools
+  template:
+    metadata:
+      labels:
+        app: net-tools
+    spec:
+      containers:
+      - name: net-tools
+        image: donch/net-tools:latest
+        imagePullPolicy: Always
+        args:
+        - sleep
+        - "infinity"
