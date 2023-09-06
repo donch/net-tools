@@ -22,6 +22,7 @@ RUN apt-get update && apt-get -y install traceroute \
     bind9-dnsutils \
     redis \
     vim \
+    sysbench \
     strace
 
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y

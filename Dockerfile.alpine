@@ -24,6 +24,7 @@ RUN apk update && apk add --no-cache mtr \
  vim \
  kubectl \
  strace \
+ sysbench \
  && rm -rf /var/cache/apk/*
 
 COPY files/.bashrc /root/.bashrc
