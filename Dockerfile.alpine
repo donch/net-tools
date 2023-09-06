@@ -3,6 +3,7 @@ MAINTAINER David Donchez <david.donchez@gmail.com>
 
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories
 
 # Installing some tools
 RUN apk update && apk add --no-cache mtr \
