@@ -23,6 +23,7 @@ RUN apt-get update && apt-get -y install traceroute \
     redis \
     vim \
     sysbench \
+    mongodb-org-shell \
     strace
 
 RUN curl -sS https://starship.rs/install.sh | sh -s -- -y
