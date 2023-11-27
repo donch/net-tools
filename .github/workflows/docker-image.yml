@@ -56,7 +56,7 @@ jobs:
     - name: Push container images tag (Ubuntu)
       uses: docker/build-push-action@v4
       with:
-        platforms: linux/amd64,linux/arm64,linux/arm/v7
+        platforms: linux/amd64,linux/arm64
         push: true
         labels: ${{ steps.meta.outputs.labels }}
         file: Dockerfile.ubuntu
