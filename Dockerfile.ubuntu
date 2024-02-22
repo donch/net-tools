@@ -23,6 +23,7 @@ RUN apt-get update && apt-get -y install traceroute \
     bind9-dnsutils \
     redis \
     vim \
+    oping \
     sysbench \
     strace
 
