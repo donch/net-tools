@@ -52,6 +52,8 @@ jobs:
         tags: |
           ${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:latest
+          ${{ github.repository }}:alpine
+          ghcr.io/${{ github.repository }}:alpine
 
     - name: Push container images tag (Ubuntu)
       uses: docker/build-push-action@v4
@@ -63,3 +65,5 @@ jobs:
         tags: |
           ${{ github.repository }}:lunar
           ghcr.io/${{ github.repository }}:lunar
+          ${{ github.repository }}:ubuntu
+          ghcr.io/${{ github.repository }}:ubuntu
