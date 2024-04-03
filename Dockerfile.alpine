@@ -26,6 +26,7 @@ RUN apk update && apk add --no-cache mtr \
  kubectl \
  strace \
  liboping \
+ rsync \
  && rm -rf /var/cache/apk/*
 
 COPY files/.bashrc /root/.bashrc
