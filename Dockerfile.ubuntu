@@ -1,4 +1,4 @@
-FROM ubuntu:lunar
+FROM ubuntu:noble
 MAINTAINER David Donchez <david.donchez@gmail.com>
 
 RUN apt-get update && apt-get -y install traceroute \
