@@ -66,4 +66,5 @@ jobs:
           ${{ github.repository }}:noble
           ghcr.io/${{ github.repository }}:noble
           ${{ github.repository }}:ubuntu
+          ${{ github.repository }}:tmp
           ghcr.io/${{ github.repository }}:ubuntu
