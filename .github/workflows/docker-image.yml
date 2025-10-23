@@ -53,6 +53,7 @@ jobs:
           ${{ github.repository }}:latest
           ghcr.io/${{ github.repository }}:latest
           ${{ github.repository }}:alpine
+          ${{ github.repository }}:test
           ghcr.io/${{ github.repository }}:alpine
 
     - name: Push container images tag (Ubuntu)
