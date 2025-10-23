@@ -55,7 +55,6 @@ jobs:
           ${{ github.repository }}:alpine
           ${{ github.repository }}:test
           ghcr.io/${{ github.repository }}:alpine
-          ghcr.io/${{ github.repository }}:test
 
     - name: Push container images tag (Ubuntu)
       uses: docker/build-push-action@v4
@@ -70,3 +69,13 @@ jobs:
           ${{ github.repository }}:ubuntu
           ghcr.io/${{ github.repository }}:tmp
           ghcr.io/${{ github.repository }}:ubuntu
+
+    - name: Push container images tag (Test)
+      uses: docker/build-push-action@v4
+      with:
+        platforms: linux/amd64
+        push: true
+        labels: ${{ steps.meta.outputs.labels }}
+        file: Dockerfile.ubuntutest
+        tags: |
+          ghcr.io/${{ github.repository }}:test
